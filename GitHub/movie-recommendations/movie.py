@@ -70,4 +70,4 @@ def average_ratings(movie, min_rating=8):
 def ratings_for_users(user):
     return [x for x in user_rates[user]]
 
-def top_movies(x, min_ratings=8):
+def top_movies(x, min_ratings=8)
