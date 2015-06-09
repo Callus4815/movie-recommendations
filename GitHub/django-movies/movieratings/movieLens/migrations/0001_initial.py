@@ -13,15 +13,15 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Movie',
             fields=[
-                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('title', models.CharField(max_length=140)),
             ],
         ),
         migrations.CreateModel(
             name='Rater',
             fields=[
-                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
-                ('gender', models.CharField(max_length=2)),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
+                ('gender', models.CharField(max_length=20)),
                 ('age', models.IntegerField()),
                 ('occupation', models.IntegerField()),
                 ('zipcode', models.IntegerField()),
@@ -30,9 +30,9 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Rating',
             fields=[
-                ('id', models.AutoField(primary_key=True, auto_created=True, verbose_name='ID', serialize=False)),
+                ('id', models.AutoField(primary_key=True, verbose_name='ID', auto_created=True, serialize=False)),
                 ('rating', models.IntegerField()),
-                ('timestamp', models.DateTimeField()),
+                ('timestamp', models.IntegerField()),
                 ('movie', models.ForeignKey(to='movieLens.Movie')),
                 ('rater', models.ForeignKey(to='movieLens.Rater')),
             ],
